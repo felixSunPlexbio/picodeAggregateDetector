@@ -128,7 +128,10 @@ namespace aggreagteDetectorDev
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "image files|*.jpeg;*.jpg;*.bmp;*.png";
-            ofd.InitialDirectory = Properties.Settings.Default.LoadPath;
+            ofd.InitialDirectory = (Directory.Exists(Properties.Settings.Default.LoadPath)) ?
+                Properties.Settings.Default.LoadPath
+                :
+                Application.StartupPath;
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -445,7 +448,10 @@ namespace aggreagteDetectorDev
         private void batchFoldersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CommonOpenFileDialog dlg = new CommonOpenFileDialog();
-            dlg.InitialDirectory = Properties.Settings.Default.LoadPath;
+            dlg.InitialDirectory = (Directory.Exists(Properties.Settings.Default.LoadPath))?
+                Properties.Settings.Default.LoadPath
+                :
+                Application.StartupPath;
             dlg.Title = "Select assay image folder";
             dlg.IsFolderPicker = true;
             
