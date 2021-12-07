@@ -1,0 +1,11 @@
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\picodeAggregateDetector.dll
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\picodeAggregateDetector.pdb
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\Emgu.CV.Platform.NetStandard.dll
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\Emgu.CV.Platform.NetStandard.xml
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\obj\x64\Debug\picodeAggregateDetector.csproj.CoreCompileInputs.cache
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\obj\x64\Debug\picodeAggregateDetector.csproj.CopyComplete
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\obj\x64\Debug\picodeAggregateDetector.dll
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\obj\x64\Debug\picodeAggregateDetector.pdb
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\System.Drawing.Primitives.dll
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\System.Runtime.dll
+C:\Users\felix.sun\source\repos\picodeAggregateDetector\picodeAggregateDetector\bin\x64\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
