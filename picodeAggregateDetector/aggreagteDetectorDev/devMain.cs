@@ -38,6 +38,13 @@ namespace aggreagteDetectorDev
 
             initialFrameImageID();
             refreshSetting();
+
+            this.Text = String.Format("PiCode aggregation detector  {0}.{1}.{2} {3}:{4}"
+                , ThisAssembly.Git.BaseVersion.Major
+                , ThisAssembly.Git.BaseVersion.Minor
+                , ThisAssembly.Git.BaseVersion.Patch
+                , ThisAssembly.Git.Branch
+                , ThisAssembly.Git.Commits);
         }
 
         private void updateSettings()
