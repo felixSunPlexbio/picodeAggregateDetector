@@ -35,6 +35,7 @@ namespace aggreagteDetectorDev
             this.batchFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveParametersAsDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlInof = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -105,18 +106,15 @@ namespace aggreagteDetectorDev
             this.tabImage = new System.Windows.Forms.TabControl();
             this.tabOrig = new System.Windows.Forms.TabPage();
             this.picOrig = new System.Windows.Forms.PictureBox();
-            this.tabBinary = new System.Windows.Forms.TabPage();
-            this.picBinary = new System.Windows.Forms.PictureBox();
-            this.tabED1 = new System.Windows.Forms.TabPage();
-            this.picED1 = new System.Windows.Forms.PictureBox();
-            this.tabED2 = new System.Windows.Forms.TabPage();
-            this.picED2 = new System.Windows.Forms.PictureBox();
             this.tabCC = new System.Windows.Forms.TabPage();
             this.picCC = new System.Windows.Forms.PictureBox();
             this.tabObjects = new System.Windows.Forms.TabPage();
             this.picObjects = new System.Windows.Forms.PictureBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusMessage = new System.Windows.Forms.ToolStripStatusLabel();
+            this.picBinary = new System.Windows.Forms.PictureBox();
+            this.picED1 = new System.Windows.Forms.PictureBox();
+            this.picED2 = new System.Windows.Forms.PictureBox();
             this.menuStrip2.SuspendLayout();
             this.pnlInof.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -147,23 +145,21 @@ namespace aggreagteDetectorDev
             this.tabImage.SuspendLayout();
             this.tabOrig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picOrig)).BeginInit();
-            this.tabBinary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBinary)).BeginInit();
-            this.tabED1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picED1)).BeginInit();
-            this.tabED2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picED2)).BeginInit();
             this.tabCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCC)).BeginInit();
             this.tabObjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picObjects)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBinary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picED1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picED2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip2
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile});
+            this.mnuFile,
+            this.saveParametersAsDefaultToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(1184, 24);
@@ -208,26 +204,30 @@ namespace aggreagteDetectorDev
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // saveParametersAsDefaultToolStripMenuItem
+            // 
+            this.saveParametersAsDefaultToolStripMenuItem.Name = "saveParametersAsDefaultToolStripMenuItem";
+            this.saveParametersAsDefaultToolStripMenuItem.Size = new System.Drawing.Size(172, 20);
+            this.saveParametersAsDefaultToolStripMenuItem.Text = "Save parameters as Default";
+            this.saveParametersAsDefaultToolStripMenuItem.Visible = false;
+            // 
             // pnlInof
             // 
             this.pnlInof.Controls.Add(this.panel2);
-            this.pnlInof.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlInof.Location = new System.Drawing.Point(944, 24);
             this.pnlInof.Name = "pnlInof";
             this.pnlInof.Size = new System.Drawing.Size(240, 732);
             this.pnlInof.TabIndex = 2;
+            this.pnlInof.Visible = false;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.gpBinary);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.groupBox2);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(76, 72);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(240, 732);
+            this.panel2.Size = new System.Drawing.Size(240, 566);
             this.panel2.TabIndex = 0;
             // 
             // panel4
@@ -240,8 +240,7 @@ namespace aggreagteDetectorDev
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.lblCursor);
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Location = new System.Drawing.Point(29, 22);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(240, 250);
             this.panel4.TabIndex = 8;
@@ -642,6 +641,7 @@ namespace aggreagteDetectorDev
             this.gpBinary.Controls.Add(this.numBinaryBlockSize);
             this.gpBinary.Controls.Add(this.label5);
             this.gpBinary.Controls.Add(this.cboBinaryThreshold);
+            this.gpBinary.Controls.Add(this.groupBox2);
             this.gpBinary.Controls.Add(this.label4);
             this.gpBinary.Controls.Add(this.cboBinaryAdaptive);
             this.gpBinary.Controls.Add(this.label3);
@@ -649,8 +649,7 @@ namespace aggreagteDetectorDev
             this.gpBinary.Controls.Add(this.label2);
             this.gpBinary.Controls.Add(this.label1);
             this.gpBinary.Controls.Add(this.numBinaryMaxValue);
-            this.gpBinary.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gpBinary.Location = new System.Drawing.Point(0, 250);
+            this.gpBinary.Location = new System.Drawing.Point(28, 278);
             this.gpBinary.Name = "gpBinary";
             this.gpBinary.Size = new System.Drawing.Size(240, 155);
             this.gpBinary.TabIndex = 7;
@@ -798,8 +797,7 @@ namespace aggreagteDetectorDev
             this.groupBox1.Controls.Add(this.numErode);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.chkErodeFirst);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 405);
+            this.groupBox1.Location = new System.Drawing.Point(26, 439);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(240, 101);
             this.groupBox1.TabIndex = 6;
@@ -887,6 +885,7 @@ namespace aggreagteDetectorDev
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.numMinRadius);
+            this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.numCirclePara2);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label12);
@@ -895,8 +894,7 @@ namespace aggreagteDetectorDev
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.numDp);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox2.Location = new System.Drawing.Point(0, 506);
+            this.groupBox2.Location = new System.Drawing.Point(65, 102);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(240, 185);
             this.groupBox2.TabIndex = 5;
@@ -1095,8 +1093,7 @@ namespace aggreagteDetectorDev
             // panel3
             // 
             this.panel3.Controls.Add(this.btnProceed);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 691);
+            this.panel3.Location = new System.Drawing.Point(126, 77);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 41);
             this.panel3.TabIndex = 4;
@@ -1114,25 +1111,25 @@ namespace aggreagteDetectorDev
             // panel1
             // 
             this.panel1.Controls.Add(this.tabImage);
+            this.panel1.Controls.Add(this.picBinary);
+            this.panel1.Controls.Add(this.picED1);
+            this.panel1.Controls.Add(this.picED2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 732);
+            this.panel1.Size = new System.Drawing.Size(1184, 732);
             this.panel1.TabIndex = 3;
             // 
             // tabImage
             // 
             this.tabImage.Controls.Add(this.tabOrig);
-            this.tabImage.Controls.Add(this.tabBinary);
-            this.tabImage.Controls.Add(this.tabED1);
-            this.tabImage.Controls.Add(this.tabED2);
             this.tabImage.Controls.Add(this.tabCC);
             this.tabImage.Controls.Add(this.tabObjects);
             this.tabImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabImage.Location = new System.Drawing.Point(0, 0);
             this.tabImage.Name = "tabImage";
             this.tabImage.SelectedIndex = 0;
-            this.tabImage.Size = new System.Drawing.Size(944, 732);
+            this.tabImage.Size = new System.Drawing.Size(1184, 732);
             this.tabImage.TabIndex = 0;
             // 
             // tabOrig
@@ -1141,7 +1138,7 @@ namespace aggreagteDetectorDev
             this.tabOrig.Location = new System.Drawing.Point(4, 22);
             this.tabOrig.Name = "tabOrig";
             this.tabOrig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOrig.Size = new System.Drawing.Size(936, 706);
+            this.tabOrig.Size = new System.Drawing.Size(1176, 706);
             this.tabOrig.TabIndex = 0;
             this.tabOrig.Text = "Orignal Image";
             this.tabOrig.UseVisualStyleBackColor = true;
@@ -1151,78 +1148,17 @@ namespace aggreagteDetectorDev
             this.picOrig.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picOrig.Location = new System.Drawing.Point(3, 3);
             this.picOrig.Name = "picOrig";
-            this.picOrig.Size = new System.Drawing.Size(930, 700);
+            this.picOrig.Size = new System.Drawing.Size(1170, 700);
             this.picOrig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picOrig.TabIndex = 0;
             this.picOrig.TabStop = false;
-            // 
-            // tabBinary
-            // 
-            this.tabBinary.Controls.Add(this.picBinary);
-            this.tabBinary.Location = new System.Drawing.Point(4, 22);
-            this.tabBinary.Name = "tabBinary";
-            this.tabBinary.Size = new System.Drawing.Size(936, 706);
-            this.tabBinary.TabIndex = 2;
-            this.tabBinary.Text = "Binary";
-            this.tabBinary.UseVisualStyleBackColor = true;
-            // 
-            // picBinary
-            // 
-            this.picBinary.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picBinary.Location = new System.Drawing.Point(0, 0);
-            this.picBinary.Name = "picBinary";
-            this.picBinary.Size = new System.Drawing.Size(936, 706);
-            this.picBinary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBinary.TabIndex = 0;
-            this.picBinary.TabStop = false;
-            // 
-            // tabED1
-            // 
-            this.tabED1.Controls.Add(this.picED1);
-            this.tabED1.ForeColor = System.Drawing.Color.Coral;
-            this.tabED1.Location = new System.Drawing.Point(4, 22);
-            this.tabED1.Name = "tabED1";
-            this.tabED1.Size = new System.Drawing.Size(936, 706);
-            this.tabED1.TabIndex = 3;
-            this.tabED1.Text = "ErodeDilate1";
-            this.tabED1.UseVisualStyleBackColor = true;
-            // 
-            // picED1
-            // 
-            this.picED1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picED1.Location = new System.Drawing.Point(0, 0);
-            this.picED1.Name = "picED1";
-            this.picED1.Size = new System.Drawing.Size(936, 706);
-            this.picED1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picED1.TabIndex = 0;
-            this.picED1.TabStop = false;
-            // 
-            // tabED2
-            // 
-            this.tabED2.Controls.Add(this.picED2);
-            this.tabED2.Location = new System.Drawing.Point(4, 22);
-            this.tabED2.Name = "tabED2";
-            this.tabED2.Size = new System.Drawing.Size(936, 706);
-            this.tabED2.TabIndex = 4;
-            this.tabED2.Text = "ErodeDilate2";
-            this.tabED2.UseVisualStyleBackColor = true;
-            // 
-            // picED2
-            // 
-            this.picED2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picED2.Location = new System.Drawing.Point(0, 0);
-            this.picED2.Name = "picED2";
-            this.picED2.Size = new System.Drawing.Size(936, 706);
-            this.picED2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picED2.TabIndex = 0;
-            this.picED2.TabStop = false;
             // 
             // tabCC
             // 
             this.tabCC.Controls.Add(this.picCC);
             this.tabCC.Location = new System.Drawing.Point(4, 22);
             this.tabCC.Name = "tabCC";
-            this.tabCC.Size = new System.Drawing.Size(936, 706);
+            this.tabCC.Size = new System.Drawing.Size(1176, 706);
             this.tabCC.TabIndex = 5;
             this.tabCC.Text = "Component";
             this.tabCC.UseVisualStyleBackColor = true;
@@ -1232,7 +1168,7 @@ namespace aggreagteDetectorDev
             this.picCC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCC.Location = new System.Drawing.Point(0, 0);
             this.picCC.Name = "picCC";
-            this.picCC.Size = new System.Drawing.Size(936, 706);
+            this.picCC.Size = new System.Drawing.Size(1176, 706);
             this.picCC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCC.TabIndex = 0;
             this.picCC.TabStop = false;
@@ -1247,7 +1183,7 @@ namespace aggreagteDetectorDev
             this.tabObjects.Location = new System.Drawing.Point(4, 22);
             this.tabObjects.Name = "tabObjects";
             this.tabObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabObjects.Size = new System.Drawing.Size(936, 706);
+            this.tabObjects.Size = new System.Drawing.Size(1176, 706);
             this.tabObjects.TabIndex = 1;
             this.tabObjects.Text = "Bead";
             this.tabObjects.UseVisualStyleBackColor = true;
@@ -1257,7 +1193,7 @@ namespace aggreagteDetectorDev
             this.picObjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picObjects.Location = new System.Drawing.Point(3, 3);
             this.picObjects.Name = "picObjects";
-            this.picObjects.Size = new System.Drawing.Size(930, 700);
+            this.picObjects.Size = new System.Drawing.Size(1170, 700);
             this.picObjects.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picObjects.TabIndex = 0;
             this.picObjects.TabStop = false;
@@ -1269,7 +1205,7 @@ namespace aggreagteDetectorDev
             this.statusMessage});
             this.statusStrip1.Location = new System.Drawing.Point(0, 734);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(944, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -1278,6 +1214,33 @@ namespace aggreagteDetectorDev
             this.statusMessage.Name = "statusMessage";
             this.statusMessage.Size = new System.Drawing.Size(128, 17);
             this.statusMessage.Text = "toolStripStatusLabel1";
+            // 
+            // picBinary
+            // 
+            this.picBinary.Location = new System.Drawing.Point(457, 61);
+            this.picBinary.Name = "picBinary";
+            this.picBinary.Size = new System.Drawing.Size(288, 270);
+            this.picBinary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBinary.TabIndex = 1;
+            this.picBinary.TabStop = false;
+            // 
+            // picED1
+            // 
+            this.picED1.Location = new System.Drawing.Point(104, 61);
+            this.picED1.Name = "picED1";
+            this.picED1.Size = new System.Drawing.Size(339, 270);
+            this.picED1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picED1.TabIndex = 2;
+            this.picED1.TabStop = false;
+            // 
+            // picED2
+            // 
+            this.picED2.Location = new System.Drawing.Point(762, 61);
+            this.picED2.Name = "picED2";
+            this.picED2.Size = new System.Drawing.Size(311, 192);
+            this.picED2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picED2.TabIndex = 3;
+            this.picED2.TabStop = false;
             // 
             // devMain
             // 
@@ -1324,18 +1287,15 @@ namespace aggreagteDetectorDev
             this.tabImage.ResumeLayout(false);
             this.tabOrig.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picOrig)).EndInit();
-            this.tabBinary.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBinary)).EndInit();
-            this.tabED1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picED1)).EndInit();
-            this.tabED2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picED2)).EndInit();
             this.tabCC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCC)).EndInit();
             this.tabObjects.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picObjects)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBinary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picED1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picED2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1355,12 +1315,6 @@ namespace aggreagteDetectorDev
         private System.Windows.Forms.PictureBox picOrig;
         private System.Windows.Forms.TabPage tabObjects;
         private System.Windows.Forms.PictureBox picObjects;
-        private System.Windows.Forms.TabPage tabBinary;
-        private System.Windows.Forms.PictureBox picBinary;
-        private System.Windows.Forms.TabPage tabED1;
-        private System.Windows.Forms.PictureBox picED1;
-        private System.Windows.Forms.TabPage tabED2;
-        private System.Windows.Forms.PictureBox picED2;
         private System.Windows.Forms.TabPage tabCC;
         private System.Windows.Forms.PictureBox picCC;
         private System.Windows.Forms.Panel panel2;
@@ -1431,6 +1385,10 @@ namespace aggreagteDetectorDev
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusMessage;
+        private System.Windows.Forms.ToolStripMenuItem saveParametersAsDefaultToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picBinary;
+        private System.Windows.Forms.PictureBox picED1;
+        private System.Windows.Forms.PictureBox picED2;
     }
 }
 

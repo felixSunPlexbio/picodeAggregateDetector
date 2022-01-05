@@ -100,6 +100,7 @@ E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDe
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\bin\Release\tr\ZedGraph.resources.dll
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\bin\Release\zh-cn\ZedGraph.resources.dll
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\bin\Release\zh-tw\ZedGraph.resources.dll
+E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\GitInfo.cache
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\aggreagteDetectorDev.csprojAssemblyReference.cache
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\aggreagteDetectorDev.devMain.resources
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\aggreagteDetectorDev.Properties.Resources.resources
@@ -108,4 +109,3 @@ E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDe
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\aggreagteDetectorDev.csproj.CopyComplete
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\aggreagteDetectorDev.exe
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\aggreagteDetectorDev.pdb
-E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\aggreagteDetectorDev\obj\Release\GitInfo.cache

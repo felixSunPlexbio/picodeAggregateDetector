@@ -241,7 +241,7 @@ namespace aggreagteDetectorDev.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1600")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1200")]
         public int compAreaThreshold {
             get {
                 return ((int)(this["compAreaThreshold"]));
@@ -253,7 +253,7 @@ namespace aggreagteDetectorDev.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("850")]
+        [global::System.Configuration.DefaultSettingValueAttribute("800")]
         public int compBearAreaThreshold {
             get {
                 return ((int)(this["compBearAreaThreshold"]));

@@ -57,10 +57,10 @@
       <Value Profile="(Default)">0.81</Value>
     </Setting>
     <Setting Name="compAreaThreshold" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1600</Value>
+      <Value Profile="(Default)">1200</Value>
     </Setting>
     <Setting Name="compBearAreaThreshold" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">850</Value>
+      <Value Profile="(Default)">800</Value>
     </Setting>
     <Setting Name="circleEmptyThreshold" Type="System.Double" Scope="User">
       <Value Profile="(Default)">0.2</Value>

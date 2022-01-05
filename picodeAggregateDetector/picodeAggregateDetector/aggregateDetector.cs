@@ -147,16 +147,19 @@ namespace picodeAggregateDetector
             {
                 if (this.beadCoverRate(c) > this.paras.circleCoverThreshold)
                 {
+                    //Solid circle
                     this.ResultImage.Draw(c, new Gray(255), 4, Emgu.CV.CvEnum.LineType.AntiAlias);
                     thcbs.Add(c);
                 }
                 else if (this.beadCoverRate(c) <this.paras.circleEmptyThreshold)
                 {
+                    //Empty circle
                     this.ResultImage.Draw(
                         new CircleF(c.Center,c.Radius+2), new Gray(255), 2, Emgu.CV.CvEnum.LineType.AntiAlias);
                     empbs.Add(c);
                 }
                 else
+                    //Normal circle
                     this.ResultImage.Draw(
                         new CircleF(c.Center,8)
                         , new Gray(255), 1, Emgu.CV.CvEnum.LineType.AntiAlias);
