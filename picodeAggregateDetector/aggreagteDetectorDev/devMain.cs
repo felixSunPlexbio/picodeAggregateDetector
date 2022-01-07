@@ -25,9 +25,16 @@ namespace aggreagteDetectorDev
 
         private picodeAggregateDetector.aggregateDetector dt;
 
-        public devMain()
+        static private bool DEBUGMODE = false;
+
+        public devMain(bool debug_mode=false)
         {
             InitializeComponent();
+#if DEBUG
+            DEBUGMODE = true;
+#endif
+            if (debug_mode)
+                DEBUGMODE = true;
 
             this.clearPictureBoxes();
 
@@ -45,6 +52,31 @@ namespace aggreagteDetectorDev
                 , ThisAssembly.Git.BaseVersion.Patch
                 , ThisAssembly.Git.Branch
                 , ThisAssembly.Git.Commits);
+
+            if (!DEBUGMODE)
+                denkaRemove();
+        }
+
+        private void denkaRemove()
+        {
+            this.groupErode.Visible = false;
+            this.gpBinary.Visible = false;
+            this.groupCircle.Visible = false;
+            this.gpComponents.Visible = false;
+            this.saveParametersAsDefaultToolStripMenuItem.Visible = false;
+            this.pnlBottom.Visible = false;
+            this.lblBeadEmpty.Visible = false;
+            this.lblBeadOverlap.Visible = false;
+            this.numCircleCoverageThreshod.Visible = false;
+            this.numCircleEmptyThreshold.Visible = false;
+            this.lblOverlapped.Visible = false;
+            this.lblHighCoveredBeads.Visible = false;
+            this.lblNumEmpty.Visible = false;
+            this.lblEmptyBeads.Visible = false;
+
+            this.tabImage.TabPages.Remove(tabED1);
+            this.tabImage.TabPages.Remove(tabBinary);
+            this.tabImage.TabPages.Remove(tabED2);
         }
 
         private void updateSettings()
@@ -157,8 +189,9 @@ namespace aggreagteDetectorDev
                     this.lblLargeArea.Text = dt.ccLargeAreaCount.ToString();
 
                     this.lblNumBeads.Text = dt.beads.Length.ToString();
-                    this.lblHighCoveredBeads.Text = dt.highCoveredBeads.Length.ToString();
+                    this.lblHighCoveredBeads.Text =  dt.highCoveredBeads.Length.ToString();
                     this.lblEmptyBeads.Text = dt.emptyBeads.Length.ToString();
+                    this.lblNumAggCC.Text = dt.caWithSolidBead.Count.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -337,6 +370,7 @@ namespace aggreagteDetectorDev
                     this.lblNumBeads.Text = dt.beads.Length.ToString();
                     this.lblHighCoveredBeads.Text = dt.highCoveredBeads.Length.ToString();
                     this.lblEmptyBeads.Text = dt.emptyBeads.Length.ToString();
+                    this.lblNumAggCC.Text = dt.caWithSolidBead.Count.ToString();
 
                     this.lblNumLabels.Text = dt.ccCount.ToString();
                     this.lblHighCover.Text = dt.ccHighCoveredCount.ToString();
@@ -433,9 +467,10 @@ namespace aggreagteDetectorDev
 
                 }
 
-                if(cf.Radius>0)
+                Dictionary<int, bool> cas = new Dictionary<int, bool>();
+                if (cf.Radius>0)
                 {
-                    String m = String.Format("Center : {0},{1}\nArea : {2}\nCover Rate : {3}", cf.Center.X, cf.Center.Y, (int)Math.Pow(cf.Radius,2), this.dt.beadCoverRate(cf));
+                    String m = String.Format("Center : {0},{1}\nArea : {2}\nCover Rate : {3}", cf.Center.X, cf.Center.Y, (int)Math.Pow(cf.Radius,2), this.dt.beadCoverRate(cf,cas));
                     MessageBox.Show(m);
                 }
             }
@@ -494,7 +529,7 @@ namespace aggreagteDetectorDev
                     Application.DoEvents();
 
                     string[] frames = frameFiles(dir);
-                    string line = this.imageSummary(frames, para);
+                    string line = (DEBUGMODE) ? this.imageSummary(frames, para): this.simpleImageSummary(frames,para);
                     if(line.Length>0)
                         results.Add(Path.GetFileName(dir), line);
                 }
@@ -517,8 +552,14 @@ namespace aggreagteDetectorDev
             //output result
             if(results.Count>0)
             {
-                this.saveResultToFile(results, reportFile);
-                   
+                if(DEBUGMODE)
+                {
+                    this.saveResultToFile(results, reportFile);
+                }
+                else
+                    this.saveSimpleResultToFile(results, reportFile);
+
+
                 //MessageBox.Show("Analysis successfully completed");
                 statusMessage.Text = "Analysis successfully completed";
                 ProcessStartInfo startInfo = new ProcessStartInfo { Arguments = dlg.FileName, FileName = "explorer.exe" };
@@ -539,6 +580,15 @@ namespace aggreagteDetectorDev
         private  void saveResultToFile(Dictionary<string,string> results, string file)
         {
             string context = "well,Bead,Overlap,%Overlap,Hollow,%Hollow,Component,Solid,%Soled,Large,%Large";
+            foreach (KeyValuePair<string, string> v in results)
+                context += "\n" + v.Key + "," + v.Value;
+
+            File.WriteAllText(file, context);
+        }
+
+        private void saveSimpleResultToFile(Dictionary<string, string> results, string file)
+        {
+            string context = "well,#Bead,#Aggregation";
             foreach (KeyValuePair<string, string> v in results)
                 context += "\n" + v.Key + "," + v.Value;
 
@@ -584,7 +634,32 @@ namespace aggreagteDetectorDev
 
             return rtn;
         }
+        
+        public string simpleImageSummary(string[] frames, aggregateDetectorParams para)
+        {
+            string rtn = "";
+            aggregateDetector tempDetector;
+            int frameCnt = 0;
+            int beads = 0;
+            int solidBeads = 0;
+            int emptyBeads = 0;
+            int components = 0;
+            int largeComponents = 0;
+            int solidComponents = 0;
 
+            foreach (string f in frames)
+            {
+                tempDetector = aggregateDetector.fromFile(f, para);
+                ++frameCnt;
+                beads += tempDetector.beads.Length;
+                solidBeads += tempDetector.caWithSolidBead.Count;
+            }
+
+
+            rtn = beads.ToString();
+            rtn += "," + solidBeads.ToString();
+            return rtn;
+        }
         private string[] frameFiles(string path)
         {
             List<string> rtn = new List<string>();

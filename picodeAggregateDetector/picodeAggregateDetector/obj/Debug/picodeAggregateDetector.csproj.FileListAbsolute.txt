@@ -71,7 +71,6 @@ E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDete
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\bin\Debug\tr\ZedGraph.resources.dll
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\bin\Debug\zh-cn\ZedGraph.resources.dll
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\bin\Debug\zh-tw\ZedGraph.resources.dll
-E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.csprojAssemblyReference.cache
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.csproj.CoreCompileInputs.cache
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.csproj.CopyComplete
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.dll

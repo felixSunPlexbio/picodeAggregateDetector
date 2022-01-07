@@ -29,6 +29,19 @@ namespace picodeAggregateDetector
         public CircleF[] emptyBeads;
 
         public Dictionary<int,componentArea> ccAreas;
+        public List<int> caWithSolidBead
+        {
+            get
+            {
+                List<int> rtn = new List<int>();
+                if (ccAreas != null && ccAreas.Count > 0)
+                    foreach (KeyValuePair<int, componentArea> v in this.ccAreas)
+                        if (v.Value.circles.Count > 0)
+                            rtn.Add(v.Key);
+                return rtn;
+            }
+        }
+
         public int ccCount
         {
             get
@@ -140,18 +153,24 @@ namespace picodeAggregateDetector
             this.CComponentsImage = labels.ToImage<Gray, byte>();
             this.ccAreas = this.ccCoverages(this.CComponentsImage);
 
-            
 
             this.ResultImage = this.source.Clone();
             foreach (CircleF c in this.beads)
             {
-                if (this.beadCoverRate(c) > this.paras.circleCoverThreshold)
+                Dictionary<int, bool> cas = new Dictionary<int, bool>();
+                double beadCoverage = this.beadCoverRate(c, cas);
+
+                if (beadCoverage > this.paras.circleCoverThreshold)
                 {
                     //Solid circle
                     this.ResultImage.Draw(c, new Gray(255), 4, Emgu.CV.CvEnum.LineType.AntiAlias);
+                    //記錄在此Areas上有Circes
+                    foreach(KeyValuePair<int, bool> v in cas)
+                        this.ccAreas[v.Key].circles.Add(c);
+
                     thcbs.Add(c);
                 }
-                else if (this.beadCoverRate(c) <this.paras.circleEmptyThreshold)
+                else if (beadCoverage < this.paras.circleEmptyThreshold)
                 {
                     //Empty circle
                     this.ResultImage.Draw(
@@ -277,7 +296,7 @@ namespace picodeAggregateDetector
         }
         /**/
 
-        public double beadCoverRate(CircleF c, float reducing= 1.0f)
+        public double beadCoverRate(CircleF c, Dictionary<int, bool> cas, float reducing= 1.0f)
         {
             Image<Gray, byte> img = this.CComponentsImage;
             int pixelCnt = 0;
@@ -303,11 +322,17 @@ namespace picodeAggregateDetector
                     if((Math.Pow(x-c.Center.X,2)+Math.Pow(y-c.Center.Y,2))<r2)
                     {
                         ++pixelCnt;
-                        if (0 < (int)img[y,x].Intensity)
+                        int idx = (int)img[y, x].Intensity;
+                        if (0 < idx)
+                        {
                             ++coverCnt;
+                            if (!cas.ContainsKey(idx))
+                                cas.Add(idx, false);
+                        }
                     }
             return coverCnt*1.0 / pixelCnt;
         }
+ 
     }
 
     public class aggregateDetectorParams
@@ -388,6 +413,7 @@ namespace picodeAggregateDetector
         public int id = 0;
         public int area = 1;
         public int covered = 0;
+        public List<CircleF> circles = new List<CircleF>();
         public double coverage
         {
             get
