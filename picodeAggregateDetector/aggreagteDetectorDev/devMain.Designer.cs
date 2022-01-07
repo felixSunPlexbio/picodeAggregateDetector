@@ -231,8 +231,8 @@ namespace aggreagteDetectorDev
             // statusMessage
             // 
             this.statusMessage.Name = "statusMessage";
-            this.statusMessage.Size = new System.Drawing.Size(128, 17);
-            this.statusMessage.Text = "toolStripStatusLabel1";
+            this.statusMessage.Size = new System.Drawing.Size(12, 17);
+            this.statusMessage.Text = "-";
             // 
             // pnlInof
             // 
