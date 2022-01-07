@@ -75,3 +75,4 @@ E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDete
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.csproj.CopyComplete
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.dll
 E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.pdb
+E:\CodeWorks\picodeAggregateDetector\picodeAggregateDetector\picodeAggregateDetector\obj\Debug\picodeAggregateDetector.csprojAssemblyReference.cache

@@ -695,5 +695,41 @@ namespace aggreagteDetectorDev
                 ,"23_WL.jpg"
             };
         }
+
+        private void btnProceed_Click_1(object sender, EventArgs e)
+        {
+            if (this.dt != null && this.picOrig.Image != null)
+            {
+                this.clearPictureBoxes();
+
+                try
+                {
+                    dt.doDetect(getDetectorParams());
+                    Properties.Settings.Default.Save();
+
+                    this.picOrig.Image = dt.source.ToBitmap();
+                    this.picBinary.Image = dt.bindaryImage.ToBitmap();
+                    this.picED1.Image = dt.dilateErodeImage1.ToBitmap();
+                    this.picED2.Image = dt.dilateErodeImage2.ToBitmap();
+                    this.picCC.Image = dt.dilateErodeImage2.ToBitmap();
+                    this.picObjects.Image = dt.ResultImage.ToBitmap();
+
+
+                    this.lblNumBeads.Text = dt.beads.Length.ToString();
+                    this.lblHighCoveredBeads.Text = dt.highCoveredBeads.Length.ToString();
+                    this.lblEmptyBeads.Text = dt.emptyBeads.Length.ToString();
+                    this.lblNumAggCC.Text = dt.caWithSolidBead.Count.ToString();
+
+                    this.lblNumLabels.Text = dt.ccCount.ToString();
+                    this.lblHighCover.Text = dt.ccHighCoveredCount.ToString();
+                    this.lblLargeArea.Text = dt.ccLargeAreaCount.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to re-detect" + Environment.NewLine + ex.Message);
+                    dt = null;
+                }
+            }
+        }
     }
 }

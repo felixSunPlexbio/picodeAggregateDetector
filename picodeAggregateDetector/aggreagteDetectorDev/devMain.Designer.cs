@@ -60,6 +60,8 @@ namespace aggreagteDetectorDev
             this.numBinaryMaxValue = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblNumAggCC = new System.Windows.Forms.Label();
+            this.lblAggCC = new System.Windows.Forms.Label();
             this.lblBeadEmpty = new System.Windows.Forms.Label();
             this.numCircleEmptyThreshold = new System.Windows.Forms.NumericUpDown();
             this.lblEmptyBeads = new System.Windows.Forms.Label();
@@ -118,8 +120,6 @@ namespace aggreagteDetectorDev
             this.picCC = new System.Windows.Forms.PictureBox();
             this.tabObjects = new System.Windows.Forms.TabPage();
             this.picObjects = new System.Windows.Forms.PictureBox();
-            this.lblNumAggCC = new System.Windows.Forms.Label();
-            this.lblAggCC = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.pnlInof.SuspendLayout();
@@ -189,26 +189,26 @@ namespace aggreagteDetectorDev
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.loadToolStripMenuItem.Text = "&Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // batchFoldersToolStripMenuItem
             // 
             this.batchFoldersToolStripMenuItem.Name = "batchFoldersToolStripMenuItem";
-            this.batchFoldersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.batchFoldersToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.batchFoldersToolStripMenuItem.Text = "Batch folders...";
             this.batchFoldersToolStripMenuItem.Click += new System.EventHandler(this.batchFoldersToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(153, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -537,6 +537,25 @@ namespace aggreagteDetectorDev
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "BeadArea";
+            // 
+            // lblNumAggCC
+            // 
+            this.lblNumAggCC.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblNumAggCC.Location = new System.Drawing.Point(90, 30);
+            this.lblNumAggCC.Name = "lblNumAggCC";
+            this.lblNumAggCC.Size = new System.Drawing.Size(55, 18);
+            this.lblNumAggCC.TabIndex = 31;
+            this.lblNumAggCC.Text = "-";
+            this.lblNumAggCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAggCC
+            // 
+            this.lblAggCC.Location = new System.Drawing.Point(73, 14);
+            this.lblAggCC.Name = "lblAggCC";
+            this.lblAggCC.Size = new System.Drawing.Size(86, 16);
+            this.lblAggCC.TabIndex = 30;
+            this.lblAggCC.Text = "#Aggregates";
+            this.lblAggCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBeadEmpty
             // 
@@ -1137,6 +1156,7 @@ namespace aggreagteDetectorDev
             this.btnProceed.TabIndex = 0;
             this.btnProceed.Text = "proceed";
             this.btnProceed.UseVisualStyleBackColor = true;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click_1);
             // 
             // panel1
             // 
@@ -1188,7 +1208,7 @@ namespace aggreagteDetectorDev
             this.tabBinary.Controls.Add(this.picBinary);
             this.tabBinary.Location = new System.Drawing.Point(4, 22);
             this.tabBinary.Name = "tabBinary";
-            this.tabBinary.Size = new System.Drawing.Size(936, 912);
+            this.tabBinary.Size = new System.Drawing.Size(936, 684);
             this.tabBinary.TabIndex = 8;
             this.tabBinary.Text = "Binary";
             this.tabBinary.UseVisualStyleBackColor = true;
@@ -1198,7 +1218,7 @@ namespace aggreagteDetectorDev
             this.picBinary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picBinary.Location = new System.Drawing.Point(0, 0);
             this.picBinary.Name = "picBinary";
-            this.picBinary.Size = new System.Drawing.Size(936, 912);
+            this.picBinary.Size = new System.Drawing.Size(936, 684);
             this.picBinary.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBinary.TabIndex = 1;
             this.picBinary.TabStop = false;
@@ -1208,7 +1228,7 @@ namespace aggreagteDetectorDev
             this.tabED1.Controls.Add(this.picED1);
             this.tabED1.Location = new System.Drawing.Point(4, 22);
             this.tabED1.Name = "tabED1";
-            this.tabED1.Size = new System.Drawing.Size(936, 912);
+            this.tabED1.Size = new System.Drawing.Size(936, 684);
             this.tabED1.TabIndex = 6;
             this.tabED1.Text = "ErodeDilate1";
             this.tabED1.UseVisualStyleBackColor = true;
@@ -1218,7 +1238,7 @@ namespace aggreagteDetectorDev
             this.picED1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picED1.Location = new System.Drawing.Point(0, 0);
             this.picED1.Name = "picED1";
-            this.picED1.Size = new System.Drawing.Size(936, 912);
+            this.picED1.Size = new System.Drawing.Size(936, 684);
             this.picED1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picED1.TabIndex = 2;
             this.picED1.TabStop = false;
@@ -1228,7 +1248,7 @@ namespace aggreagteDetectorDev
             this.tabED2.Controls.Add(this.picED2);
             this.tabED2.Location = new System.Drawing.Point(4, 22);
             this.tabED2.Name = "tabED2";
-            this.tabED2.Size = new System.Drawing.Size(936, 912);
+            this.tabED2.Size = new System.Drawing.Size(936, 684);
             this.tabED2.TabIndex = 7;
             this.tabED2.Text = "ErodeDilate2";
             this.tabED2.UseVisualStyleBackColor = true;
@@ -1238,7 +1258,7 @@ namespace aggreagteDetectorDev
             this.picED2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picED2.Location = new System.Drawing.Point(0, 0);
             this.picED2.Name = "picED2";
-            this.picED2.Size = new System.Drawing.Size(936, 912);
+            this.picED2.Size = new System.Drawing.Size(936, 684);
             this.picED2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picED2.TabIndex = 3;
             this.picED2.TabStop = false;
@@ -1248,7 +1268,7 @@ namespace aggreagteDetectorDev
             this.tabCC.Controls.Add(this.picCC);
             this.tabCC.Location = new System.Drawing.Point(4, 22);
             this.tabCC.Name = "tabCC";
-            this.tabCC.Size = new System.Drawing.Size(936, 912);
+            this.tabCC.Size = new System.Drawing.Size(936, 684);
             this.tabCC.TabIndex = 5;
             this.tabCC.Text = "Component";
             this.tabCC.UseVisualStyleBackColor = true;
@@ -1258,7 +1278,7 @@ namespace aggreagteDetectorDev
             this.picCC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCC.Location = new System.Drawing.Point(0, 0);
             this.picCC.Name = "picCC";
-            this.picCC.Size = new System.Drawing.Size(936, 912);
+            this.picCC.Size = new System.Drawing.Size(936, 684);
             this.picCC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCC.TabIndex = 0;
             this.picCC.TabStop = false;
@@ -1269,7 +1289,7 @@ namespace aggreagteDetectorDev
             this.tabObjects.Location = new System.Drawing.Point(4, 22);
             this.tabObjects.Name = "tabObjects";
             this.tabObjects.Padding = new System.Windows.Forms.Padding(3);
-            this.tabObjects.Size = new System.Drawing.Size(936, 912);
+            this.tabObjects.Size = new System.Drawing.Size(936, 684);
             this.tabObjects.TabIndex = 1;
             this.tabObjects.Text = "Bead";
             this.tabObjects.UseVisualStyleBackColor = true;
@@ -1279,29 +1299,10 @@ namespace aggreagteDetectorDev
             this.picObjects.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picObjects.Location = new System.Drawing.Point(3, 3);
             this.picObjects.Name = "picObjects";
-            this.picObjects.Size = new System.Drawing.Size(930, 906);
+            this.picObjects.Size = new System.Drawing.Size(930, 678);
             this.picObjects.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picObjects.TabIndex = 0;
             this.picObjects.TabStop = false;
-            // 
-            // lblNumAggCC
-            // 
-            this.lblNumAggCC.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNumAggCC.Location = new System.Drawing.Point(90, 30);
-            this.lblNumAggCC.Name = "lblNumAggCC";
-            this.lblNumAggCC.Size = new System.Drawing.Size(55, 18);
-            this.lblNumAggCC.TabIndex = 31;
-            this.lblNumAggCC.Text = "-";
-            this.lblNumAggCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAggCC
-            // 
-            this.lblAggCC.Location = new System.Drawing.Point(73, 14);
-            this.lblAggCC.Name = "lblAggCC";
-            this.lblAggCC.Size = new System.Drawing.Size(86, 16);
-            this.lblAggCC.TabIndex = 30;
-            this.lblAggCC.Text = "#Aggregates";
-            this.lblAggCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // devMain
             // 
