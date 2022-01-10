@@ -69,10 +69,12 @@ namespace aggreagteDetectorDev
             this.lblBeadOverlap.Visible = false;
             this.numCircleCoverageThreshod.Visible = false;
             this.numCircleEmptyThreshold.Visible = false;
-            this.lblOverlapped.Visible = false;
-            this.lblHighCoveredBeads.Visible = false;
+            //this.lblOverlapped.Visible = false;
+            //this.lblHighCoveredBeads.Visible = false;
             this.lblNumEmpty.Visible = false;
             this.lblEmptyBeads.Visible = false;
+            this.lblAggCC.Visible = false;
+            this.lblNumAggCC.Visible = false;
 
             this.tabImage.TabPages.Remove(tabED1);
             this.tabImage.TabPages.Remove(tabBinary);
@@ -588,7 +590,7 @@ namespace aggreagteDetectorDev
 
         private void saveSimpleResultToFile(Dictionary<string, string> results, string file)
         {
-            string context = "well,#Bead,#Aggregation";
+            string context = "well,#Bead,#Overlap";
             foreach (KeyValuePair<string, string> v in results)
                 context += "\n" + v.Key + "," + v.Value;
 
@@ -652,7 +654,7 @@ namespace aggreagteDetectorDev
                 tempDetector = aggregateDetector.fromFile(f, para);
                 ++frameCnt;
                 beads += tempDetector.beads.Length;
-                solidBeads += tempDetector.caWithSolidBead.Count;
+                solidBeads += tempDetector.highCoveredBeads.Length;
             }
 
 
@@ -730,6 +732,16 @@ namespace aggreagteDetectorDev
                     dt = null;
                 }
             }
+        }
+
+        //transfer well id to well name
+        private string[] rid = { "A", "B","C","D","E","F","G","H" };
+        private string wellName(int wellID)
+        {
+            if (wellID < 0 || wellID > 95)
+                throw new Exception("Invalid wellID");
+
+            return rid[wellID % 12] + (wellID / 12 + 1).ToString();
         }
     }
 }

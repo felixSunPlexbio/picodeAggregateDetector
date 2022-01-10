@@ -189,26 +189,26 @@ namespace aggreagteDetectorDev
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadToolStripMenuItem.Text = "&Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // batchFoldersToolStripMenuItem
             // 
             this.batchFoldersToolStripMenuItem.Name = "batchFoldersToolStripMenuItem";
-            this.batchFoldersToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.batchFoldersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.batchFoldersToolStripMenuItem.Text = "Batch folders...";
             this.batchFoldersToolStripMenuItem.Click += new System.EventHandler(this.batchFoldersToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(153, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -541,7 +541,7 @@ namespace aggreagteDetectorDev
             // lblNumAggCC
             // 
             this.lblNumAggCC.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNumAggCC.Location = new System.Drawing.Point(90, 30);
+            this.lblNumAggCC.Location = new System.Drawing.Point(28, 62);
             this.lblNumAggCC.Name = "lblNumAggCC";
             this.lblNumAggCC.Size = new System.Drawing.Size(55, 18);
             this.lblNumAggCC.TabIndex = 31;
@@ -550,7 +550,7 @@ namespace aggreagteDetectorDev
             // 
             // lblAggCC
             // 
-            this.lblAggCC.Location = new System.Drawing.Point(73, 14);
+            this.lblAggCC.Location = new System.Drawing.Point(11, 46);
             this.lblAggCC.Name = "lblAggCC";
             this.lblAggCC.Size = new System.Drawing.Size(86, 16);
             this.lblAggCC.TabIndex = 30;
@@ -593,7 +593,7 @@ namespace aggreagteDetectorDev
             // lblEmptyBeads
             // 
             this.lblEmptyBeads.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblEmptyBeads.Location = new System.Drawing.Point(90, 62);
+            this.lblEmptyBeads.Location = new System.Drawing.Point(118, 62);
             this.lblEmptyBeads.Name = "lblEmptyBeads";
             this.lblEmptyBeads.Size = new System.Drawing.Size(55, 18);
             this.lblEmptyBeads.TabIndex = 27;
@@ -602,7 +602,7 @@ namespace aggreagteDetectorDev
             // 
             // lblNumEmpty
             // 
-            this.lblNumEmpty.Location = new System.Drawing.Point(73, 46);
+            this.lblNumEmpty.Location = new System.Drawing.Point(101, 46);
             this.lblNumEmpty.Name = "lblNumEmpty";
             this.lblNumEmpty.Size = new System.Drawing.Size(86, 16);
             this.lblNumEmpty.TabIndex = 26;
@@ -612,7 +612,7 @@ namespace aggreagteDetectorDev
             // lblHighCoveredBeads
             // 
             this.lblHighCoveredBeads.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblHighCoveredBeads.Location = new System.Drawing.Point(13, 62);
+            this.lblHighCoveredBeads.Location = new System.Drawing.Point(115, 30);
             this.lblHighCoveredBeads.Name = "lblHighCoveredBeads";
             this.lblHighCoveredBeads.Size = new System.Drawing.Size(55, 19);
             this.lblHighCoveredBeads.TabIndex = 25;
@@ -621,7 +621,7 @@ namespace aggreagteDetectorDev
             // 
             // lblOverlapped
             // 
-            this.lblOverlapped.Location = new System.Drawing.Point(-1, 46);
+            this.lblOverlapped.Location = new System.Drawing.Point(101, 14);
             this.lblOverlapped.Name = "lblOverlapped";
             this.lblOverlapped.Size = new System.Drawing.Size(86, 16);
             this.lblOverlapped.TabIndex = 24;
@@ -663,7 +663,7 @@ namespace aggreagteDetectorDev
             // 
             // label26
             // 
-            this.label26.Location = new System.Drawing.Point(-2, 14);
+            this.label26.Location = new System.Drawing.Point(7, 14);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(86, 16);
             this.label26.TabIndex = 20;
@@ -673,7 +673,7 @@ namespace aggreagteDetectorDev
             // lblNumBeads
             // 
             this.lblNumBeads.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblNumBeads.Location = new System.Drawing.Point(19, 30);
+            this.lblNumBeads.Location = new System.Drawing.Point(28, 30);
             this.lblNumBeads.Name = "lblNumBeads";
             this.lblNumBeads.Size = new System.Drawing.Size(42, 16);
             this.lblNumBeads.TabIndex = 21;
