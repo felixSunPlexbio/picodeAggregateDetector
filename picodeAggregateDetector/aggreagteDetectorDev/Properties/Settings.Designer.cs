@@ -274,5 +274,17 @@ namespace aggreagteDetectorDev.Properties {
                 this["circleEmptyThreshold"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool useWellName {
+            get {
+                return ((bool)(this["useWellName"]));
+            }
+            set {
+                this["useWellName"] = value;
+            }
+        }
     }
 }

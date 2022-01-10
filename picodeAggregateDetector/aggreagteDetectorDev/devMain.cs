@@ -40,7 +40,6 @@ namespace aggreagteDetectorDev
 
             if (Properties.Settings.Default.LoadPath == null || Properties.Settings.Default.LoadPath == "")
                 Properties.Settings.Default.LoadPath = Application.StartupPath;
-
             dt = null;
 
             initialFrameImageID();
@@ -117,6 +116,7 @@ namespace aggreagteDetectorDev
 
         private void refreshSetting()
         {
+            this.uesWellNameToolStripMenuItem.Checked = Properties.Settings.Default.useWellName;
             //binary
             this.numBinaryMaxValue.Value = Properties.Settings.Default.binaryMax;
             this.numBinaryPara1.Value = Properties.Settings.Default.binaryPara1;
@@ -533,7 +533,9 @@ namespace aggreagteDetectorDev
                     string[] frames = frameFiles(dir);
                     string line = (DEBUGMODE) ? this.imageSummary(frames, para): this.simpleImageSummary(frames,para);
                     if(line.Length>0)
-                        results.Add(Path.GetFileName(dir), line);
+                        results.Add( 
+                            (this.uesWellNameToolStripMenuItem.Checked) ? this.wellName(Path.GetFileName(dir)) : Path.GetFileName(dir)
+                            , line);
                 }
                 catch (Exception ex)
                 {
@@ -741,7 +743,20 @@ namespace aggreagteDetectorDev
             if (wellID < 0 || wellID > 95)
                 throw new Exception("Invalid wellID");
 
-            return rid[wellID % 12] + (wellID / 12 + 1).ToString();
+            return rid[wellID / 12] + (wellID % 12 + 1).ToString();
+        }
+        private string wellName(string wellIDString)
+        {
+            int wid = -1;
+            if (int.TryParse(wellIDString, out wid))
+                return wellName(wid);
+            throw new Exception("Invalid wellID string");
+        }
+
+        private void uesWellNameToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            ToolStripMenuItem mnu = (ToolStripMenuItem)sender;
+            Properties.Settings.Default.useWellName = mnu.Checked;
         }
     }
 }

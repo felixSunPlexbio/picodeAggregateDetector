@@ -120,6 +120,8 @@ namespace aggreagteDetectorDev
             this.picCC = new System.Windows.Forms.PictureBox();
             this.tabObjects = new System.Windows.Forms.TabPage();
             this.picObjects = new System.Windows.Forms.PictureBox();
+            this.mnuSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.uesWellNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.pnlInof.SuspendLayout();
@@ -167,6 +169,7 @@ namespace aggreagteDetectorDev
             // 
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
+            this.mnuSetting,
             this.saveParametersAsDefaultToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -1304,6 +1307,24 @@ namespace aggreagteDetectorDev
             this.picObjects.TabIndex = 0;
             this.picObjects.TabStop = false;
             // 
+            // mnuSetting
+            // 
+            this.mnuSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uesWellNameToolStripMenuItem});
+            this.mnuSetting.Name = "mnuSetting";
+            this.mnuSetting.Size = new System.Drawing.Size(64, 20);
+            this.mnuSetting.Text = "Settings";
+            // 
+            // uesWellNameToolStripMenuItem
+            // 
+            this.uesWellNameToolStripMenuItem.Checked = true;
+            this.uesWellNameToolStripMenuItem.CheckOnClick = true;
+            this.uesWellNameToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.uesWellNameToolStripMenuItem.Name = "uesWellNameToolStripMenuItem";
+            this.uesWellNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uesWellNameToolStripMenuItem.Text = "ues well Name";
+            this.uesWellNameToolStripMenuItem.CheckedChanged += new System.EventHandler(this.uesWellNameToolStripMenuItem_CheckedChanged);
+            // 
             // devMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1460,6 +1481,8 @@ namespace aggreagteDetectorDev
         private System.Windows.Forms.TabPage tabED2;
         private System.Windows.Forms.Label lblNumAggCC;
         private System.Windows.Forms.Label lblAggCC;
+        private System.Windows.Forms.ToolStripMenuItem mnuSetting;
+        private System.Windows.Forms.ToolStripMenuItem uesWellNameToolStripMenuItem;
     }
 }
 
