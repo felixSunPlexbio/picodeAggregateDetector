@@ -29,12 +29,15 @@ namespace aggreagteDetectorDev
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(devMain));
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.batchFoldersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.uesWellNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveParametersAsDefaultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusMessage = new System.Windows.Forms.ToolStripStatusLabel();
@@ -120,8 +123,6 @@ namespace aggreagteDetectorDev
             this.picCC = new System.Windows.Forms.PictureBox();
             this.tabObjects = new System.Windows.Forms.TabPage();
             this.picObjects = new System.Windows.Forms.PictureBox();
-            this.mnuSetting = new System.Windows.Forms.ToolStripMenuItem();
-            this.uesWellNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.pnlInof.SuspendLayout();
@@ -192,28 +193,46 @@ namespace aggreagteDetectorDev
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.loadToolStripMenuItem.Text = "&Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // batchFoldersToolStripMenuItem
             // 
             this.batchFoldersToolStripMenuItem.Name = "batchFoldersToolStripMenuItem";
-            this.batchFoldersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.batchFoldersToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.batchFoldersToolStripMenuItem.Text = "Batch folders...";
             this.batchFoldersToolStripMenuItem.Click += new System.EventHandler(this.batchFoldersToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(153, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // mnuSetting
+            // 
+            this.mnuSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uesWellNameToolStripMenuItem});
+            this.mnuSetting.Name = "mnuSetting";
+            this.mnuSetting.Size = new System.Drawing.Size(64, 20);
+            this.mnuSetting.Text = "Settings";
+            // 
+            // uesWellNameToolStripMenuItem
+            // 
+            this.uesWellNameToolStripMenuItem.Checked = true;
+            this.uesWellNameToolStripMenuItem.CheckOnClick = true;
+            this.uesWellNameToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.uesWellNameToolStripMenuItem.Name = "uesWellNameToolStripMenuItem";
+            this.uesWellNameToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.uesWellNameToolStripMenuItem.Text = "ues well Name";
+            this.uesWellNameToolStripMenuItem.CheckedChanged += new System.EventHandler(this.uesWellNameToolStripMenuItem_CheckedChanged);
             // 
             // saveParametersAsDefaultToolStripMenuItem
             // 
@@ -1307,24 +1326,6 @@ namespace aggreagteDetectorDev
             this.picObjects.TabIndex = 0;
             this.picObjects.TabStop = false;
             // 
-            // mnuSetting
-            // 
-            this.mnuSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.uesWellNameToolStripMenuItem});
-            this.mnuSetting.Name = "mnuSetting";
-            this.mnuSetting.Size = new System.Drawing.Size(64, 20);
-            this.mnuSetting.Text = "Settings";
-            // 
-            // uesWellNameToolStripMenuItem
-            // 
-            this.uesWellNameToolStripMenuItem.Checked = true;
-            this.uesWellNameToolStripMenuItem.CheckOnClick = true;
-            this.uesWellNameToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.uesWellNameToolStripMenuItem.Name = "uesWellNameToolStripMenuItem";
-            this.uesWellNameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.uesWellNameToolStripMenuItem.Text = "ues well Name";
-            this.uesWellNameToolStripMenuItem.CheckedChanged += new System.EventHandler(this.uesWellNameToolStripMenuItem_CheckedChanged);
-            // 
             // devMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1334,6 +1335,7 @@ namespace aggreagteDetectorDev
             this.Controls.Add(this.pnlInof);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1200, 795);
             this.Name = "devMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
